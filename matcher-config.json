@@ -1,0 +1,94 @@
+{"matcherConfig": [
+  {
+    "code": "MATCH_KEY",
+    "category": "IDENTIFIER",
+    "type": "INTERNAL",
+    "matchValue": "100",
+    "includeInMatchKey": "N"
+  },
+  {
+    "code": "UID",
+    "category": "IDENTIFIER",
+    "type": "INTERNAL",
+    "minLength":"36",
+    "maxLength":"36",
+    "matchValue": "100",
+    "includeInMatchKey": "N"
+  },
+  {
+    "code": "BCUSIP",
+    "category": "IDENTIFIER",
+    "type": "CLIENT",
+    "minLength":"5",
+    "maxLength":"9",
+    "matchValue": "90",
+    "includeInMatchKey": "Y"
+  },
+  {
+    "code": "EXT_ID",
+    "category": "IDENTIFIER",
+    "type": "CLIENT",
+    "matchValue":"50",
+    "includeInMatchKey": "Y"
+  },
+  {
+    "code": "CUSIPCODE",
+    "category": "IDENTIFIER",
+    "type": "INDUSTRY",
+    "minLength":"5",
+    "maxLength":"9",
+    "matchValue": "75",
+    "includeInMatchKey": "Y"
+  },
+  {
+    "code": "SEDOLCODE",
+    "category": "IDENTIFIER",
+    "type": "INDUSTRY",
+    "minLength":"5",
+    "maxLength":"9",
+    "matchValue": "75",
+    "includeInMatchKey": "Y"
+  },
+  {
+    "code": "ISINCODE",
+    "category": "IDENTIFIER",
+    "type": "INDUSTRY",
+    "minLength":"5",
+    "maxLength":"9",
+    "matchValue": "50",
+    "includeInMatchKey": "Y"
+  },
+  {
+    "code": "TYPE",
+    "category": "QUALIFIER",
+    "maxLength": "4",
+    "validValues": "EQTY;FI;FX;DERV;UNK",
+    "matchValue": "25",
+    "includeInMatchKey": "Y"
+  },
+  {
+    "code": "CCY",
+    "category": "QUALIFIER",
+    "minLength": "3",
+    "maxLength": "3",
+    "matchValue": "25",
+    "includeInMatchKey": "Y"
+  },
+  {
+    "code": "EXCHANGE",
+    "category": "QUALIFIER",
+    "minLength": "3",
+    "maxLength": "3",
+    "matchValue": "25",
+    "includeInMatchKey": "Y"
+  },
+  {
+    "code": "ISSUE",
+    "category": "QUALIFIER",
+    "maxLength": "255",
+    "matchValue": "25",
+    "includeInMatchKey": "N"
+  }
+]
+}
+
