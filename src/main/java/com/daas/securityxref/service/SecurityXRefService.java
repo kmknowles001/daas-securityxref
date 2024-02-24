@@ -12,6 +12,8 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.File;
 import java.io.FileReader;
@@ -21,13 +23,14 @@ public class SecurityXRefService extends DaasServiceBase{
 
     private MatcherConfigList matcherConfig;
 
+
     // constructor
     public SecurityXRefService(String id, String serviceName, String serviceVersion){
         super(id, serviceName,serviceVersion);
         try{
             this.matcherConfig = loadMatcherConfig();
         }catch(Exception e){
-            System.out.println("error occurred in securityxref.service start-up.");
+            Util.writeLog("error occurred in securityxref.service start-up.");
         }
     }
 
@@ -38,20 +41,19 @@ public class SecurityXRefService extends DaasServiceBase{
 
         final String key = "matcherConfig";
         final String path = "matcher-config.json";
-//        final String path = ".\\src\\main\\resources\\matcher-config.json";
 
         MatcherConfigList loadList = new MatcherConfigList();
         String executionPath =  new File(".").getCanonicalPath().toString();
 
-        System.out.println("current execution path:" + executionPath);
-        System.out.println("checking for matcher config file:" + path);
+        Util.writeLog("current execution path:" + executionPath);
+        Util.writeLog("checking for matcher config file:" + path);
 
         JSONParser parser = new JSONParser();
         JSONObject jsonFile = (JSONObject) parser.parse(new FileReader(path));
         JSONArray jsMatcherItemArray = (JSONArray) jsonFile.get(key);
 
         for (Object c : jsMatcherItemArray){
-            System.out.println("loading config file. Processing:" + c.toString());
+            Util.writeLog("loading config file. Processing:" + c.toString());
             loadList.add(new MatcherConfigItem((JSONObject)c));
         }
         return loadList;

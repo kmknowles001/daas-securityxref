@@ -20,4 +20,11 @@ public final class Util {
         OffsetDateTime now = OffsetDateTime.now( ZoneOffset.UTC );
         return now.toString();
     }
+
+    public static void writeLog(String value){
+
+        java.time.Instant logDt = Instant.now();
+
+        System.out.println(logDt.toString() + " " + "INFO --- [ " + value + "]");
+    }
 }
